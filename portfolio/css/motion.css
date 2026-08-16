@@ -1,0 +1,143 @@
+:root {
+  --transition: 0.25s ease;
+}
+
+.nav-links a:hover, .nav-links a:focus-visible, .nav-links a.active {
+  color: var(--accent-cyan);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Cards hover */
+.award-card:hover, .award-card:focus-within {
+  transform: translateX(6px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18), 0 0 20px rgba(255, 196, 0, 0.08);
+}
+
+.interest-card:hover, .interest-card:focus-within {
+  transform: translateY(-5px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18), 0 0 24px rgba(0, 229, 255, 0.08);
+}
+
+.contact-email:hover, .contact-email:focus {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.back-to-top:hover, .back-to-top:focus {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+}
+
+.modal-close:hover, .modal-close:focus {
+  border-color: var(--accent-danger);
+  color: var(--accent-danger);
+}
+
+/* Scroll reveal with stagger support */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: 0s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HUD scan animation */
+@keyframes scanMove {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+@keyframes scanSweep {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Status pulse */
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Knowledge graph node pulse */
+@keyframes nodePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.85; }
+}
+
+/* Timeline node glow */
+@keyframes nodeGlow {
+  0%, 100% { box-shadow: 0 0 12px currentColor; }
+  50% { box-shadow: 0 0 26px currentColor; }
+}
+
+/* Timeline scanning beam */
+@keyframes beamScan {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: calc(100% - 28px); opacity: 0; }
+}
+
+/* Terminal cursor blink */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Parallax transition */
+.hud-portrait img {
+  transition: transform 0.2s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hud-scan-line {
+    animation: none;
+    top: 50%;
+  }
+  .kg-node circle,
+  .timeline-active .timeline-beam,
+  .timeline-active .node-2026,
+  .timeline-active .node-now,
+  .terminal-cursor,
+  .terminal-cursor.blink {
+    animation: none;
+  }
+  .kg-line {
+    stroke-dashoffset: 0;
+  }
+  .timeline-line {
+    transform: translateX(-50%) scaleY(1);
+  }
+  .timeline-node {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .focus-card,
+  .focus-card-active,
+  .focus-card-dim {
+    transform: none;
+    opacity: 1;
+  }
+  .focus-detail,
+  .focus-explore {
+    max-height: none;
+    opacity: 1;
+    transform: none;
+  }
+}

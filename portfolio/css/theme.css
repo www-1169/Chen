@@ -1,0 +1,47 @@
+:root {
+  --transition: 0.25s ease;
+}
+
+/* Modal overlay theming */
+.modal-overlay {
+  background: rgba(5, 8, 22, 0.85);
+  backdrop-filter: blur(6px);
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+[data-theme="light"] .modal-overlay {
+  background: rgba(237, 241, 245, 0.85);
+}
+
+/* Navigation theming */
+[data-theme="light"] .nav {
+  background: rgba(247, 249, 251, 0.85);
+}
+
+/* Terminal light theme adjustments */
+[data-theme="light"] .skills-terminal {
+  background: rgba(240, 244, 248, 0.96);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .terminal-header {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .kg-node circle {
+  fill: rgba(247, 249, 251, 0.7);
+}
+
+/* Section background consistency in light theme */
+[data-theme="light"] #focus {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+[data-theme="light"] #education {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+/* HUD enhancements visibility in light theme */
+[data-theme="light"] .hud-frame::before {
+  opacity: 0.65;
+}

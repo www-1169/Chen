@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>星际突袭：银河防线</title>
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <div id="gameWrapper">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- 加载界面 -->
+    <div id="bootScreen" class="screen active">
+      <div class="boot-content">
+        <h1 class="glitch" data-text="星际突袭">星际突袭</h1>
+        <p class="subtitle">银河防线</p>
+        <div class="loader-bar"><div class="loader-fill" id="bootFill"></div></div>
+        <p class="loader-text" id="bootText">系统初始化中...</p>
+      </div>
+    </div>
+
+    <!-- 主菜单 -->
+    <div id="menuScreen" class="screen">
+      <div class="menu-panel">
+        <h1 class="glitch" data-text="星际突袭：银河防线">星际突袭：银河防线</h1>
+        <button class="btn btn-primary" id="btnStart">开始任务</button>
+        <button class="btn" id="btnHelp">玩法说明</button>
+        <button class="btn" id="btnRank">排行榜</button>
+        <button class="btn" id="btnSettings">设置</button>
+      </div>
+    </div>
+
+    <!-- 玩法说明 -->
+    <div id="helpScreen" class="screen">
+      <div class="panel">
+        <h2>作战手册</h2>
+        <div class="help-body">
+          <p><strong>桌面端：</strong>WASD / 方向键移动，空格释放技能，Esc 或 P 暂停。</p>
+          <p><strong>移动端：</strong>拖拽战机移动，右下角按钮释放技能。</p>
+          <p>战机自动射击，击败敌机获得经验晶体。经验满后进入三选一升级。</p>
+          <p>每 3 波出现精英敌人，第 10 波迎战 Boss「虚空泰坦」。</p>
+        </div>
+        <button class="btn" id="btnHelpBack">返回</button>
+      </div>
+    </div>
+
+    <!-- 排行榜 -->
+    <div id="rankScreen" class="screen">
+      <div class="panel">
+        <h2>精英排行榜</h2>
+        <ol id="rankList"></ol>
+        <button class="btn" id="btnRankBack">返回</button>
+      </div>
+    </div>
+
+    <!-- 设置 -->
+    <div id="settingsScreen" class="screen">
+      <div class="panel">
+        <h2>系统设置</h2>
+        <label class="setting-row"><span>音效</span><input type="checkbox" id="settingSound" checked /></label>
+        <label class="setting-row"><span>背景音乐</span><input type="checkbox" id="settingMusic" checked /></label>
+        <label class="setting-row"><span>操控模式（移动端）</span>
+          <select id="settingControl">
+            <option value="drag">拖拽战机</option>
+            <option value="follow">跟随手指</option>
+          </select>
+        </label>
+        <button class="btn" id="btnSettingsBack">返回</button>
+      </div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud" class="screen hud">
+      <div class="hud-top">
+        <div class="hud-group">
+          <div class="bar hp-bar"><div class="bar-fill" id="hpFill"></div><span class="bar-text">HP</span></div>
+          <div class="bar shield-bar"><div class="bar-fill" id="shieldFill"></div><span class="bar-text">SHIELD</span></div>
+        </div>
+        <div class="hud-score" id="scoreDisplay">0</div>
+        <div class="hud-wave" id="waveDisplay">WAVE 1</div>
+      </div>
+      <div class="boss-hud" id="bossHud">
+        <div class="bar boss-bar"><div class="bar-fill" id="bossHpFill"></div><span class="bar-text" id="bossName">VOID TITAN</span></div>
+      </div>
+      <div class="hud-bottom">
+        <div class="exp-bar"><div class="bar-fill" id="expFill"></div></div>
+        <button class="skill-btn" id="skillBtn">
+          <div class="skill-cd" id="skillCd"></div>
+          <span>技能</span>
+        </button>
+      </div>
+      <button class="pause-btn" id="pauseBtn">II</button>
+    </div>
+
+    <!-- 升级选择 -->
+    <div id="upgradeScreen" class="screen">
+      <h2 class="upgrade-title">选择升级</h2>
+      <div class="upgrade-cards" id="upgradeCards"></div>
+    </div>
+
+    <!-- Boss 警告 -->
+    <div id="bossWarningScreen" class="screen">
+      <div class="warning-content">
+        <div class="warning-flash"></div>
+        <h2 class="warning-title">WARNING</h2>
+        <p class="warning-subtitle">VOID TITAN APPROACHING</p>
+      </div>
+    </div>
+
+    <!-- 暂停 -->
+    <div id="pauseScreen" class="screen">
+      <div class="panel">
+        <h2>任务暂停</h2>
+        <button class="btn btn-primary" id="btnResume">继续任务</button>
+        <button class="btn" id="btnRestart">重新开始</button>
+        <button class="btn" id="btnPauseMenu">返回主菜单</button>
+      </div>
+    </div>
+
+    <!-- 结算 -->
+    <div id="gameOverScreen" class="screen">
+      <div class="panel">
+        <h2 id="goTitle">任务结束</h2>
+        <div class="stats">
+          <div><span>最终分数</span><strong id="goScore">0</strong></div>
+          <div><span>击杀数量</span><strong id="goKills">0</strong></div>
+          <div><span>到达波次</span><strong id="goWave">0</strong></div>
+          <div><span>存活时间</span><strong id="goTime">00:00</strong></div>
+          <div><span>评级</span><strong id="goRank" class="rank-text">C</strong></div>
+        </div>
+        <button class="btn btn-primary" id="btnGoRestart">再次出击</button>
+        <button class="btn" id="btnGoMenu">返回主菜单</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/main.js"></script>
+</body>
+</html>
