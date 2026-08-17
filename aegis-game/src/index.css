@@ -1,0 +1,26 @@
+/* 全局基础样式 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #0b0716;
+  color: #e8e6f0;
+  font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}

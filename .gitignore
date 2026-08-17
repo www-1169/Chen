@@ -30,3 +30,7 @@ Desktop.ini
 
 # Temporary / deployment output
 CZB_Portfolio_v1.1_Final.zip
+
+# Tool / workspace metadata
+.tools/
+.trae/
