@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Brian Chen / 陈志彬 - Carbon Neutrality Science & Engineering student. Digital Carbon Lab: Carbon Neutrality × Technology × AI × Sustainability.">
-  <title>Brian Chen / 陈志彬 | Digital Carbon Lab</title>
+  <meta name="description" content="CZB Digital Carbon Lab — A personal engineering and creative technology space exploring carbon neutrality, AI and sustainable systems.">
+  <meta name="theme-color" content="#050816" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F7F9FB" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="CZB DIGITAL CARBON LAB">
+  <meta property="og:description" content="A personal engineering and creative technology space exploring carbon neutrality, AI and sustainable systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/screenshots/star-assault-gameplay.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CZB DIGITAL CARBON LAB">
+  <meta name="twitter:description" content="A personal engineering and creative technology space exploring carbon neutrality, AI and sustainable systems.">
+  <meta name="twitter:image" content="assets/screenshots/star-assault-gameplay.png">
+  <title>CZB DIGITAL CARBON LAB</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
@@ -18,12 +28,13 @@
     <div class="container">
       <a href="#" class="nav-logo">CZB</a>
       <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#experiment">Experiment</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#project">Project</a>
-        <a href="#awards">Awards</a>
+        <a href="#mission">Mission</a>
+        <a href="#experiment">Field</a>
+        <a href="#journey">Journey</a>
+        <a href="#exploration">Exploration</a>
+        <a href="#capability">Capability</a>
+        <a href="#case-study">Case Study</a>
+        <a href="#evidence">Evidence</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-controls">
@@ -40,147 +51,70 @@
   </nav>
 
   <main id="main">
-    <section class="hero" id="hero" aria-label="首页介绍">
+    <section class="hero" id="hero" aria-label="CZB Digital Carbon Lab">
       <canvas id="hero-canvas" aria-hidden="true"></canvas>
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content reveal">
-            <div class="hero-label">01 / PERSONAL DIGITAL LAB</div>
-            <p class="hero-name-cn">陈志彬</p>
-            <p class="hero-name-en">BRIAN CHEN</p>
-            <p class="hero-major">Carbon Neutrality Science & Engineering</p>
-            <p class="hero-tagline">Technology × AI × Sustainability</p>
+            <p class="hero-label">CZB DIGITAL CARBON LAB</p>
+            <h1 class="hero-brand">
+              <span class="hero-brand-czb">CZB</span>
+              <span class="hero-brand-lab">DIGITAL CARBON LAB</span>
+            </h1>
+            <p class="hero-mission">Exploring the intersection of<br>Carbon Neutrality, AI and Technology.</p>
+            <div class="hero-identity">
+              <span class="hero-name">Brian Chen</span>
+              <span class="hero-major">Carbon Neutrality Science & Engineering</span>
+            </div>
             <div class="hero-actions">
-              <a href="#project" class="btn btn-primary">EXPLORE MY WORK</a>
-              <a href="#contact" class="btn btn-secondary">CONTACT</a>
+              <a href="#experiment" class="btn btn-primary">EXPLORE LAB</a>
+              <a href="#case-study" class="btn btn-secondary">VIEW PROJECTS</a>
             </div>
           </div>
           <div class="hero-visual reveal">
-            <div class="hud-frame">
+            <div class="hud-frame" id="identityTerminal">
               <div class="hud-corner tl"></div>
               <div class="hud-corner tr"></div>
               <div class="hud-corner bl"></div>
               <div class="hud-corner br"></div>
               <div class="hud-status">STATUS: ONLINE</div>
               <div class="hud-portrait">
-                <img src="assets/portrait.png" alt="Brian Chen / 陈志彬 证件照">
+                <img src="assets/portrait.png" alt="Brian Chen / 陈志彬">
                 <div class="hud-portrait-scan" aria-hidden="true"></div>
               </div>
-              <div class="hud-data-labels">
-                <span>CZB</span>
-                <span>BRIAN CHEN</span>
-                <span>2026-2030</span>
-                <span>NCEPU</span>
+              <div class="hud-data-list">
+                <div class="hud-data-row"><span class="hud-data-key">STATUS</span><span class="hud-data-value status">ONLINE</span></div>
+                <div class="hud-data-row"><span class="hud-data-key">FIELD</span><span class="hud-data-value">CARBON × AI</span></div>
+                <div class="hud-data-row"><span class="hud-data-key">BUILD</span><span class="hud-data-value">2026</span></div>
+                <div class="hud-data-row"><span class="hud-data-key">LOCATION</span><span class="hud-data-value">NCEPU</span></div>
               </div>
               <div class="hud-scan-line" aria-hidden="true"></div>
-              <div class="hud-tags">
-                <span class="hud-tag accent">CARBON</span>
-                <span class="hud-tag">TECHNOLOGY</span>
-                <span class="hud-tag">AI</span>
-                <span class="hud-tag">ESG</span>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="focus" aria-labelledby="focus-title">
+    <section class="section" id="mission" aria-labelledby="mission-title">
       <div class="container">
         <div class="reveal">
-          <p class="section-title" id="focus-title">Current Focus</p>
-          <h2 class="section-heading">正在探索的方向</h2>
+          <p class="section-title" id="mission-title">Mission</p>
+          <h2 class="section-heading">Why this lab exists</h2>
         </div>
-        <div class="focus-grid">
-          <article class="focus-card reveal" tabindex="0">
-            <p class="focus-number">[01]</p>
-            <h3 class="focus-title">CARBON NEUTRALITY</h3>
-            <p class="focus-desc">Carbon Neutrality Science & Engineering</p>
-            <p class="focus-detail">系统研究碳中和科学与工程，关注能源转型、碳核算与低碳技术路径。</p>
-            <span class="focus-explore">EXPLORE <span aria-hidden="true">→</span></span>
-          </article>
-          <article class="focus-card reveal" tabindex="0">
-            <p class="focus-number">[02]</p>
-            <h3 class="focus-title">PROGRAMMING</h3>
-            <p class="focus-desc">C++ / Python</p>
-            <p class="focus-detail">以 C++ 为核心，Python 为辅助，构建算法思维与工程实现能力。</p>
-            <span class="focus-explore">EXPLORE <span aria-hidden="true">→</span></span>
-          </article>
-          <article class="focus-card reveal" tabindex="0">
-            <p class="focus-number">[03]</p>
-            <h3 class="focus-title">ARTIFICIAL INTELLIGENCE</h3>
-            <p class="focus-desc">AI tools / AI-assisted development</p>
-            <p class="focus-detail">探索 AI 工具链与辅助开发，将智能技术融入学习与项目实践。</p>
-            <span class="focus-explore">EXPLORE <span aria-hidden="true">→</span></span>
-          </article>
-          <article class="focus-card reveal" tabindex="0">
-            <p class="focus-number">[04]</p>
-            <h3 class="focus-title">SUSTAINABILITY</h3>
-            <p class="focus-desc">ESG / Sustainable Development</p>
-            <p class="focus-detail">关注 ESG 与可持续发展议题，作为跨学科学习与实践的延伸方向。</p>
-            <span class="focus-explore">EXPLORE <span aria-hidden="true">→</span></span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-title" id="about-title">About</p>
-          <h2 class="section-heading">关于我</h2>
-        </div>
-        <div class="about-content reveal">
-          <p class="about-text">
-            I am Brian Chen, a Carbon Neutrality Science and Engineering student exploring the intersection of technology, AI and sustainable development.
+        <div class="mission-content reveal">
+          <p class="mission-statement">
+            Exploring how intelligent technologies<br>
+            can accelerate sustainable development.
           </p>
-          <div class="about-keywords">
-            <span class="keyword cyan">Digital Carbon Lab</span>
-            <span class="keyword">Carbon Neutrality</span>
-            <span class="keyword green">AI-assisted Development</span>
-            <span class="keyword">Sustainability</span>
+          <p class="mission-text">
+            CZB Digital Carbon Lab is a personal research and experimentation space. It connects carbon neutrality, artificial intelligence and creative coding — turning curiosity into working prototypes and measurable learning.
+          </p>
+          <div class="mission-signals">
+            <span class="signal">CARBON</span>
+            <span class="signal">AI</span>
+            <span class="signal">TECHNOLOGY</span>
+            <span class="signal">SUSTAINABILITY</span>
           </div>
-        </div>
-        <div class="knowledge-graph" aria-hidden="true">
-          <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid meet">
-            <defs>
-              <linearGradient id="kg-line" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="rgba(0,229,255,0.05)" />
-                <stop offset="50%" stop-color="rgba(0,229,255,0.35)" />
-                <stop offset="100%" stop-color="rgba(0,229,255,0.05)" />
-              </linearGradient>
-              <filter id="kg-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            <line class="kg-line" x1="60" y1="100" x2="160" y2="50" />
-            <line class="kg-line" x1="60" y1="100" x2="160" y2="150" />
-            <line class="kg-line" x1="160" y1="50" x2="260" y2="100" />
-            <line class="kg-line" x1="160" y1="150" x2="260" y2="100" />
-            <line class="kg-line" x1="60" y1="100" x2="260" y2="100" />
-            <line class="kg-line" x1="160" y1="50" x2="160" y2="150" />
-
-            <g class="kg-node" transform="translate(60,100)">
-              <circle r="22" />
-              <text y="4">CARBON</text>
-            </g>
-            <g class="kg-node" transform="translate(160,50)">
-              <circle r="24" />
-              <text y="4">TECH</text>
-            </g>
-            <g class="kg-node" transform="translate(260,100)">
-              <circle r="22" />
-              <text y="4">AI</text>
-            </g>
-            <g class="kg-node" transform="translate(160,150)">
-              <circle r="26" />
-              <text y="4">ESG</text>
-            </g>
-          </svg>
         </div>
       </div>
     </section>
@@ -189,127 +123,143 @@
       <div class="container">
         <div class="reveal">
           <p class="section-title" id="experiment-title">Experiment / 00</p>
-          <h2 class="section-heading">Interactive Field</h2>
+          <h2 class="section-heading">Creative Coding Installation</h2>
         </div>
         <div class="experiment-intro reveal">
-          <p>鼠标进入场域，观察粒子与网格的实时响应。这是一个轻量的 Creative Coding 实验，展示代码如何创造有机的交互视觉。</p>
+          <p>A lightweight creative coding experiment. Move your cursor to distort the field. Click to create ripples. Scroll to shift particle density.</p>
         </div>
         <div class="experiment-canvas-wrap reveal">
           <canvas id="field-canvas" aria-label="交互粒子场"></canvas>
           <div class="experiment-hud" aria-hidden="true">
             <span class="experiment-hud-item">PARTICLES: <span id="field-particles">80</span></span>
-            <span class="experiment-hud-item">GRID: ACTIVE</span>
+            <span class="experiment-hud-item">GRID: DISTORTED</span>
             <span class="experiment-hud-item">MOUSE: TRACKING</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="education" aria-labelledby="education-title">
+    <section class="section" id="journey" aria-labelledby="journey-title">
       <div class="container">
         <div class="reveal">
-          <p class="section-title" id="education-title">Education</p>
-          <h2 class="section-heading">教育经历</h2>
+          <p class="section-title" id="journey-title">Journey</p>
+          <h2 class="section-heading">From foundation to engineering impact</h2>
         </div>
-        <div class="education-timeline reveal">
-          <div class="timeline-phase">
-            <div class="timeline-track" aria-hidden="true">
-              <div class="timeline-line"></div>
-              <div class="timeline-beam"></div>
-              <div class="timeline-node node-2026" data-label="2026"></div>
-              <div class="timeline-node node-now" data-label="NOW"></div>
-              <div class="timeline-node node-2030" data-label="2030"></div>
-            </div>
-            <article class="education-item active">
-              <p class="education-year">2026 — 2030</p>
-              <h3 class="education-school">NORTH CHINA ELECTRIC POWER UNIVERSITY</h3>
-              <p class="education-major">Carbon Neutrality Science & Engineering</p>
-              <p class="education-note">Beijing Campus · 预计毕业节点 2030</p>
+        <div class="journey-timeline reveal" id="journeyTimeline">
+          <div class="journey-track" aria-hidden="true">
+            <div class="journey-line"></div>
+            <div class="journey-beam"></div>
+            <div class="journey-node node-2026" data-label="2026"></div>
+            <div class="journey-node node-2027" data-label="2027"></div>
+            <div class="journey-node node-2028" data-label="2028"></div>
+            <div class="journey-node node-2030" data-label="2030"></div>
+          </div>
+          <div class="journey-items">
+            <article class="journey-card">
+              <p class="journey-year">2026</p>
+              <h3 class="journey-phase">FOUNDATION</h3>
+              <p class="journey-desc">Starting Carbon Neutrality Science & Engineering at NCEPU. Building core skills in C++, Python and engineering fundamentals.</p>
+            </article>
+            <article class="journey-card">
+              <p class="journey-year">2027</p>
+              <h3 class="journey-phase">EXPLORATION</h3>
+              <p class="journey-desc">Exploring AI tools, creative coding and carbon accounting methods through small experiments and projects.</p>
+            </article>
+            <article class="journey-card">
+              <p class="journey-year">2028</p>
+              <h3 class="journey-phase">RESEARCH</h3>
+              <p class="journey-desc">Deeper research into renewable energy systems, ESG frameworks and data-driven sustainability solutions.</p>
+            </article>
+            <article class="journey-card">
+              <p class="journey-year">2030</p>
+              <h3 class="journey-phase">ENGINEERING IMPACT</h3>
+              <p class="journey-desc">Graduation target. Applying engineering and AI knowledge to real-world carbon neutrality challenges.</p>
             </article>
           </div>
-          <article class="education-item">
-            <p class="education-year">Earlier Experience</p>
-            <h3 class="education-school">高中阶段</h3>
-            <p class="education-major">信息学竞赛 · 曾任班长 · 成绩优良</p>
-            <p class="education-note">多次获得省级奖项</p>
+        </div>
+        <div class="education-note reveal">
+          <p><strong>Earlier experience:</strong> 高中阶段 · 信息学竞赛 · 曾任班长 · 成绩优良 · 多次获得省级奖项</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="exploration" aria-labelledby="exploration-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-title" id="exploration-title">Exploration</p>
+          <h2 class="section-heading">Active research interests</h2>
+        </div>
+        <div class="exploration-grid">
+          <article class="exploration-card reveal">
+            <p class="exploration-number">01</p>
+            <h3 class="exploration-name">AI for Sustainability</h3>
+            <p class="exploration-status">Exploring</p>
+            <p class="exploration-desc">Investigating how machine learning and AI-assisted tools can improve environmental monitoring and decision-making.</p>
+          </article>
+          <article class="exploration-card reveal">
+            <p class="exploration-number">02</p>
+            <h3 class="exploration-name">Carbon Accounting</h3>
+            <p class="exploration-status">Learning</p>
+            <p class="exploration-desc">Understanding methods to measure, report and verify greenhouse gas emissions across systems and organizations.</p>
+          </article>
+          <article class="exploration-card reveal">
+            <p class="exploration-number">03</p>
+            <h3 class="exploration-name">Renewable Energy Systems</h3>
+            <p class="exploration-status">Interested in</p>
+            <p class="exploration-desc">Studying the integration, modeling and optimization of solar, wind and storage technologies.</p>
+          </article>
+          <article class="exploration-card reveal">
+            <p class="exploration-number">04</p>
+            <h3 class="exploration-name">Digital Transformation</h3>
+            <p class="exploration-status">Exploring</p>
+            <p class="exploration-desc">Using code, data visualization and interactive systems to communicate complex sustainability ideas.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="skills" aria-labelledby="skills-title">
+    <section class="section" id="capability" aria-labelledby="capability-title">
       <div class="container">
         <div class="reveal">
-          <p class="section-title" id="skills-title">Skills</p>
-          <h2 class="section-heading">技能与能力</h2>
+          <p class="section-title" id="capability-title">Capability</p>
+          <h2 class="section-heading">CZB System Capability</h2>
         </div>
-        <div class="skills-terminal reveal">
-          <div class="terminal-header">
-            <span class="terminal-dot"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">tech_stack.exe</span>
+        <div class="capability-system reveal">
+          <div class="capability-group build">
+            <h3 class="capability-group-title">BUILD</h3>
+            <ul class="capability-list">
+              <li><span class="capability-name">C++</span><span class="capability-tag">GAME SYSTEMS · ALGORITHMS</span></li>
+              <li><span class="capability-name">Python</span><span class="capability-tag">DATA · AUTOMATION</span></li>
+              <li><span class="capability-name">Game Systems</span><span class="capability-tag">CANVAS · STATE · AUDIO</span></li>
+            </ul>
           </div>
-          <div class="terminal-body">
-            <div class="terminal-status">
-              <span class="terminal-prompt">$</span> system status: <span class="status-online">ONLINE</span>
-            </div>
-            <div class="terminal-group">
-              <div class="terminal-comment">// PROGRAMMING</div>
-              <div class="terminal-line">
-                <span class="terminal-prompt">&gt;</span>
-                <span class="terminal-command">C++</span>
-                <span class="terminal-tag cyan">[ADVANCED]</span>
-                <span class="terminal-cursor" aria-hidden="true"></span>
-              </div>
-              <div class="terminal-line">
-                <span class="terminal-prompt">&gt;</span>
-                <span class="terminal-command">Python</span>
-                <span class="terminal-tag purple">[BEGINNER]</span>
-              </div>
-            </div>
-            <div class="terminal-group">
-              <div class="terminal-comment">// TOOLS</div>
-              <div class="terminal-line">
-                <span class="terminal-prompt">&gt;</span>
-                <span class="terminal-command">Excel</span>
-                <span class="terminal-tag green">[APPLIED]</span>
-              </div>
-              <div class="terminal-line">
-                <span class="terminal-prompt">&gt;</span>
-                <span class="terminal-command">PowerPoint</span>
-                <span class="terminal-tag green">[APPLIED]</span>
-              </div>
-              <div class="terminal-line">
-                <span class="terminal-prompt">&gt;</span>
-                <span class="terminal-command">Word</span>
-                <span class="terminal-tag green">[APPLIED]</span>
-              </div>
-            </div>
-            <div class="terminal-group">
-              <div class="terminal-comment">// AI</div>
-              <div class="terminal-line">
-                <span class="terminal-prompt">&gt;</span>
-                <span class="terminal-command">AI-assisted Development</span>
-                <span class="terminal-tag gold">[EXPLORING]</span>
-              </div>
-            </div>
-            <div class="terminal-footer">
-              <span class="terminal-prompt">$</span> ready for next input<span class="terminal-cursor blink" aria-hidden="true"></span>
-            </div>
+          <div class="capability-group explore">
+            <h3 class="capability-group-title">EXPLORE</h3>
+            <ul class="capability-list">
+              <li><span class="capability-name">Artificial Intelligence</span><span class="capability-tag">AI-ASSISTED DEVELOPMENT</span></li>
+              <li><span class="capability-name">Creative Coding</span><span class="capability-tag">INTERACTIVE VISUALS</span></li>
+            </ul>
+          </div>
+          <div class="capability-group understand">
+            <h3 class="capability-group-title">UNDERSTAND</h3>
+            <ul class="capability-list">
+              <li><span class="capability-name">Carbon Neutrality</span><span class="capability-tag">SCIENCE & ENGINEERING</span></li>
+              <li><span class="capability-name">ESG</span><span class="capability-tag">FRAMEWORKS</span></li>
+              <li><span class="capability-name">Sustainability</span><span class="capability-tag">SYSTEMS THINKING</span></li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="project" aria-labelledby="project-title">
+    <section class="section" id="case-study" aria-labelledby="case-study-title">
       <div class="container">
         <div class="reveal">
-          <p class="section-title" id="project-title">Featured Project</p>
-          <h2 class="section-heading">代表作品</h2>
+          <p class="section-title" id="case-study-title">Case Study / 01</p>
+          <h2 class="section-heading">Star Assault: An engineered interactive system</h2>
         </div>
-        <article class="project-card reveal">
-          <div class="project-visual">
+        <article class="case-study-card reveal">
+          <div class="case-study-visual">
             <div class="project-hud">
               <div class="hud-corner tl"></div>
               <div class="hud-corner tr"></div>
@@ -317,31 +267,26 @@
               <div class="hud-corner br"></div>
               <span class="project-hud-label">LIVE FEED</span>
             </div>
-            <div class="project-screenshot">
-              <img src="assets/screenshots/star-assault-gameplay.png" alt="Star Assault 游戏实机画面：玩家飞船在 Wave 1 中躲避绿色敌方单位">
+            <div class="case-study-screenshot">
+              <img src="assets/screenshots/star-assault-gameplay.png" alt="Star Assault 实机画面">
             </div>
             <div class="project-scan" aria-hidden="true"></div>
-            <div class="project-play">
+            <div class="case-study-play">
               <a href="projects/star-assault/index.html" class="btn btn-primary">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z"/></svg>
                 PLAY DEMO
               </a>
             </div>
           </div>
-          <div class="project-info">
-            <p class="project-label">FEATURED PROJECT / 01</p>
-            <h3 class="project-name">STAR ASSAULT</h3>
-            <p class="project-subname">GALACTIC DEFENSE · 星际突袭：银河防线</p>
-            <p class="project-type">Browser-based Canvas Game</p>
-            <div class="project-tech">
-              <span>HTML5 Canvas</span>
-              <span>JavaScript</span>
-              <span>CSS3</span>
-              <span>Web Audio API</span>
-              <span>LocalStorage</span>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-primary" id="projectDetailBtn">CASE STUDY</button>
+          <div class="case-study-info">
+            <p class="case-study-label">STAR ASSAULT / GALACTIC DEFENSE</p>
+            <h3 class="case-study-name">Engineered Interactive System</h3>
+            <p class="case-study-type">Browser-based Canvas Game</p>
+            <p class="case-study-summary">
+              Star Assault is presented not as "a game I made," but as a complete engineered interactive system: game loop, entity management, collision detection, wave engine, boss AI, audio synthesis and persistent storage.
+            </p>
+            <div class="case-study-actions">
+              <button class="btn btn-primary" id="caseStudyBtn">FULL CASE STUDY</button>
               <a href="projects/star-assault/index.html" class="btn btn-secondary">PLAY DEMO</a>
               <a href="https://github.com/wzwy8866" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">SOURCE</a>
             </div>
@@ -350,79 +295,60 @@
       </div>
     </section>
 
-    <section class="section" id="awards" aria-labelledby="awards-title">
+    <section class="section" id="evidence" aria-labelledby="evidence-title">
       <div class="container">
         <div class="reveal">
-          <p class="section-title" id="awards-title">Achievements</p>
-          <h2 class="section-heading">获奖经历</h2>
+          <p class="section-title" id="evidence-title">Evidence</p>
+          <h2 class="section-heading">Verified Records</h2>
         </div>
-        <div class="awards-timeline reveal" id="awardsTimeline">
-          <div class="awards-track" aria-hidden="true">
-            <div class="awards-line"></div>
-            <div class="awards-beam"></div>
-            <div class="awards-node" data-date="2025.01"></div>
-            <div class="awards-node" data-date="2025.04"></div>
+        <div class="evidence-system reveal">
+          <div class="evidence-category">
+            <h3 class="evidence-category-title">Competitions</h3>
+            <div class="evidence-timeline" id="evidenceTimeline">
+              <div class="evidence-track" aria-hidden="true">
+                <div class="evidence-line"></div>
+                <div class="evidence-beam"></div>
+                <div class="evidence-node node-2025-01" data-date="2025.01"></div>
+                <div class="evidence-node node-2025-04" data-date="2025.04"></div>
+              </div>
+              <article class="evidence-card">
+                <p class="evidence-date">2025.01</p>
+                <h4 class="evidence-name">THE FLTRP CUP</h4>
+                <p class="evidence-detail">Third Prize · 外研社杯 三等奖</p>
+              </article>
+              <article class="evidence-card">
+                <p class="evidence-date">2025.04</p>
+                <h4 class="evidence-name">YE SHENGTAO CUP</h4>
+                <p class="evidence-detail">Third Prize · 叶圣陶杯 三等奖</p>
+              </article>
+            </div>
           </div>
-          <article class="award-card">
-            <div class="award-glow" aria-hidden="true"></div>
-            <p class="award-date">2025.01</p>
-            <h3 class="award-name">THE FLTRP CUP</h3>
-            <p class="award-award">Third Prize · 外研社杯 三等奖</p>
-          </article>
-          <article class="award-card">
-            <div class="award-glow" aria-hidden="true"></div>
-            <p class="award-date">2025.04</p>
-            <h3 class="award-name">YE SHENGTAO CUP</h3>
-            <p class="award-award">Third Prize · 叶圣陶杯 三等奖</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="interests" aria-labelledby="interests-title">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-title" id="interests-title">Interests</p>
-          <h2 class="section-heading">兴趣爱好</h2>
-        </div>
-        <div class="interests-bento">
-          <article class="interest-card wide reveal">
-            <div class="interest-icon">
-              <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <p class="interest-name">数学研究</p>
-          </article>
-          <article class="interest-card reveal">
-            <div class="interest-icon">
-              <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-            </div>
-            <p class="interest-name">剪辑</p>
-          </article>
-          <article class="interest-card reveal">
-            <div class="interest-icon">
-              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <p class="interest-name">编程</p>
-          </article>
-          <article class="interest-card wide reveal">
-            <div class="interest-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 2a10 10 0 0 1 10 10"/><path d="M12 12L21 5"/></svg>
-            </div>
-            <p class="interest-name">AI 知识与运用</p>
-          </article>
-          <article class="interest-card reveal">
-            <div class="interest-icon">
-              <svg viewBox="0 0 24 24"><path d="M6.5 6.5h11"/><path d="M6.5 17.5h11"/><path d="M6 20v-8a6 6 0 0 1 12 0v8"/></svg>
-            </div>
-            <p class="interest-name">健身</p>
-          </article>
-          <article class="interest-card wide photo reveal">
-            <div class="interest-photo-overlay" aria-hidden="true"></div>
-            <div class="interest-icon">
-              <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            </div>
-            <p class="interest-name">摄影</p>
-          </article>
+          <div class="evidence-category">
+            <h3 class="evidence-category-title">Projects</h3>
+            <ul class="evidence-list">
+              <li class="evidence-list-item">
+                <span class="evidence-list-name">Star Assault</span>
+                <span class="evidence-list-desc">Canvas game system with entity engine, wave logic and audio</span>
+              </li>
+              <li class="evidence-list-item">
+                <span class="evidence-list-name">CZB Digital Carbon Lab</span>
+                <span class="evidence-list-desc">Personal portfolio and research space (this website)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="evidence-category">
+            <h3 class="evidence-category-title">Achievements</h3>
+            <ul class="evidence-list">
+              <li class="evidence-list-item">
+                <span class="evidence-list-name">信息学竞赛</span>
+                <span class="evidence-list-desc">多次获得省级奖项</span>
+              </li>
+              <li class="evidence-list-item">
+                <span class="evidence-list-name">班级管理</span>
+                <span class="evidence-list-desc">曾任班长，组织协调经验</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -430,6 +356,7 @@
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact-box reveal">
+          <p class="contact-label">READY FOR NEXT EXPLORATION</p>
           <h2 class="contact-title" id="contact-title">LET'S CONNECT</h2>
           <p class="contact-desc">Interested in technology, AI and sustainability?</p>
           <a class="contact-email" href="mailto:3200595293@qq.com">3200595293@qq.com</a>
@@ -442,9 +369,22 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" id="footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> Brian Chen / 陈志彬 · Digital Carbon Lab</p>
+      <div class="footer-brand">
+        <p class="footer-lab">CZB DIGITAL CARBON LAB</p>
+        <p class="footer-status">SYSTEM END</p>
+      </div>
+      <div class="footer-flow" aria-hidden="true">
+        <span>ENTER</span>
+        <span>→</span>
+        <span>EXPLORE</span>
+        <span>→</span>
+        <span>BUILD</span>
+        <span>→</span>
+        <span>EXIT</span>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> CZB Digital Carbon Lab · Brian Chen / 陈志彬</p>
     </div>
   </footer>
 
@@ -452,91 +392,87 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-8 8h6v8h4v-8h6z"/></svg>
   </button>
 
-  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-overlay" id="caseStudyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal" role="document">
       <div class="modal-header">
         <div>
           <p class="modal-label">CASE STUDY / 01</p>
-          <h3 class="modal-title" id="modalTitle">Star Assault: Galactic Defense</h3>
+          <h3 class="modal-title" id="modalTitle">Star Assault: Engineered Interactive System</h3>
         </div>
         <button class="modal-close" id="modalClose" aria-label="关闭详情">&times;</button>
       </div>
       <div class="modal-body">
         <div class="modal-section">
-          <h4>01 / OVERVIEW</h4>
-          <div class="case-study-hero">
-            <img src="assets/screenshots/star-assault-menu.png" alt="Star Assault 开始菜单">
-            <div class="case-study-meta">
-              <span>Genre: Space Shooter</span>
-              <span>Platform: Browser</span>
-              <span>Engine: Vanilla JS + Canvas</span>
-            </div>
-          </div>
-          <p>Star Assault（星际突袭：银河防线）是一款基于浏览器的 Canvas 2D 太空生存射击游戏。玩家驾驶飞船在不断升级的波次中生存，收集稀有升级，最终迎战 Boss Void Titan。</p>
+          <h4>01 / PROBLEM</h4>
+          <p>How do you build a complete browser game without engines or heavy frameworks? The goal was to create a responsive, performant interactive system that runs on desktop and mobile, using only native web technologies.</p>
         </div>
 
         <div class="modal-section">
-          <h4>02 / GAMEPLAY</h4>
-          <p>核心循环简洁而具有深度：移动 → 射击 → 躲避 → 升级。随着 Wave 推进，敌人组合与行为模式逐渐复杂，迫使玩家不断调整策略。</p>
-          <div class="case-study-diagram wave-diagram" aria-label="波次难度曲线">
-            <div class="wave-bar" style="--h:28%"><span>W1</span></div>
-            <div class="wave-bar" style="--h:42%"><span>W2</span></div>
-            <div class="wave-bar" style="--h:55%"><span>W3</span></div>
-            <div class="wave-bar" style="--h:68%"><span>W4</span></div>
-            <div class="wave-bar boss" style="--h:100%"><span>BOSS</span></div>
-          </div>
-          <p class="diagram-caption">Wave-based 难度递进：每波敌人密度与行为组合递增，Boss 波次为当前峰值。</p>
+          <h4>02 / DESIGN DECISION</h4>
+          <p>The design prioritizes a tight core loop — move, shoot, dodge, upgrade — with emergent complexity from enemy combinations and a multi-stage Boss encounter. Wave difficulty is authored through data, not hard-coded behavior.</p>
         </div>
 
         <div class="modal-section">
-          <h4>03 / SYSTEMS</h4>
+          <h4>03 / ARCHITECTURE</h4>
+          <div class="architecture-diagram" aria-label="Star Assault 系统架构">
+            <div class="arch-step"><span>INPUT</span></div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-step"><span>GAME STATE</span></div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-step"><span>ENTITY SYSTEM</span></div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-step"><span>COLLISION</span></div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-step"><span>RENDER</span></div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-step"><span>CANVAS</span></div>
+          </div>
+          <p class="diagram-caption">Core data flow from input to rendered output.</p>
+
+          <div class="system-module-map" aria-label="Star Assault 子系统模块">
+            <div class="system-module loop">GAME LOOP</div>
+            <div class="system-module wave">WAVE SYSTEM</div>
+            <div class="system-module boss">BOSS SYSTEM</div>
+            <div class="system-module upgrade">UPGRADE SYSTEM</div>
+            <div class="system-module audio">AUDIO SYSTEM</div>
+            <div class="system-module storage">STORAGE SYSTEM</div>
+          </div>
+          <p class="diagram-caption">Six specialized subsystems built on top of the core architecture.</p>
+        </div>
+
+        <div class="modal-section">
+          <h4>04 / IMPLEMENTATION</h4>
           <div class="case-study-grid">
-            <div class="case-study-card">
-              <h5>Enemy AI</h5>
-              <p>多种敌人类型具备不同移动轨迹与攻击方式，形成动态威胁场。</p>
+            <div class="case-study-detail-card">
+              <h5>Game Loop</h5>
+              <p>requestAnimationFrame-driven update/render cycle with deterministic delta time.</p>
             </div>
-            <div class="case-study-card">
-              <h5>Wave Engine</h5>
-              <p>可配置的波次表控制敌人类型、数量与出现节奏，支持持续扩展。</p>
+            <div class="case-study-detail-card">
+              <h5>Wave System</h5>
+              <p>Data-driven wave tables control enemy type, count and spawn rhythm for scalability.</p>
             </div>
-            <div class="case-study-card">
-              <h5>Boss Void Titan</h5>
-              <p>多阶段 Boss 战：血量阈值触发行为切换，考验走位与输出节奏。</p>
+            <div class="case-study-detail-card">
+              <h5>Boss System</h5>
+              <p>Multi-phase Boss with health-threshold behavior switches and pattern attacks.</p>
             </div>
-            <div class="case-study-card">
-              <h5>Upgrade Rarity</h5>
-              <p>Common · Rare · Epic · Legendary 四级稀有度，掉落与强度分层。</p>
+            <div class="case-study-detail-card">
+              <h5>Upgrade System</h5>
+              <p>Common · Rare · Epic · Legendary rarity tiers with probability-weighted drops.</p>
             </div>
-          </div>
-          <div class="rarity-row" aria-label="升级稀有度展示">
-            <span class="rarity common">COMMON</span>
-            <span class="rarity rare">RARE</span>
-            <span class="rarity epic">EPIC</span>
-            <span class="rarity legendary">LEGENDARY</span>
-          </div>
-        </div>
-
-        <div class="modal-section">
-          <h4>04 / TECHNOLOGY</h4>
-          <ul>
-            <li>原生 JavaScript 游戏循环与状态机管理</li>
-            <li>requestAnimationFrame 驱动渲染，保证流畅度</li>
-            <li>基于圆形半径距离的碰撞检测，计算轻量且稳定</li>
-            <li>Web Audio API 生成实时音效，增强反馈</li>
-            <li>localStorage 持久化：排行榜、设置、成就</li>
-          </ul>
-          <div class="tech-stack-line">
-            <span>HTML5 Canvas</span>
-            <span>JavaScript</span>
-            <span>CSS3</span>
-            <span>Web Audio API</span>
-            <span>LocalStorage</span>
+            <div class="case-study-detail-card">
+              <h5>Audio System</h5>
+              <p>Web Audio API generates real-time synthesis for shooting, explosions and power-ups.</p>
+            </div>
+            <div class="case-study-detail-card">
+              <h5>Storage System</h5>
+              <p>localStorage persists leaderboard, settings and achievements across sessions.</p>
+            </div>
           </div>
         </div>
 
         <div class="modal-section">
-          <h4>05 / INTERACTION</h4>
-          <p>支持键盘、鼠标与触摸三种输入方式，覆盖桌面与移动场景。PLAY DEMO 可直接在浏览器中运行，无需安装。</p>
+          <h4>05 / RESULT</h4>
+          <p>A fully playable browser game with keyboard, mouse and touch input, no installation required. It demonstrates systems thinking, state management and performance-aware rendering in a constrained environment.</p>
           <div class="input-badges">
             <span class="input-badge">Keyboard</span>
             <span class="input-badge">Mouse</span>

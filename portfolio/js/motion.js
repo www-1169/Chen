@@ -120,51 +120,55 @@
     }
   }
 
-  // Education timeline animation
-  function initEducationTimeline() {
-    const timeline = document.querySelector('.education-timeline');
+  // Journey timeline animation
+  function initJourneyTimeline() {
+    const timeline = document.getElementById('journeyTimeline');
     if (!timeline) return;
 
     timeline.classList.add('timeline-pending');
 
     if ('IntersectionObserver' in window && !ScrollState.prefersReducedMotion) {
-      const eduObserver = new IntersectionObserver(function(entries) {
+      const journeyObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             timeline.classList.remove('timeline-pending');
-            timeline.classList.add('timeline-active');
-            eduObserver.unobserve(entry.target);
+            timeline.classList.add('active');
+            journeyObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
+      }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
 
-      eduObserver.observe(timeline);
-      ScrollState.observers.push(eduObserver);
+      journeyObserver.observe(timeline);
+      ScrollState.observers.push(journeyObserver);
     } else {
       timeline.classList.remove('timeline-pending');
-      timeline.classList.add('timeline-active');
+      timeline.classList.add('active');
     }
   }
 
-  // Skills terminal typing cursor animation
-  function initSkillsTerminal() {
-    const terminal = document.querySelector('.skills-terminal');
-    if (!terminal) return;
+  // Evidence timeline animation
+  function initEvidenceTimeline() {
+    const timeline = document.getElementById('evidenceTimeline');
+    if (!timeline) return;
+
+    timeline.classList.add('timeline-pending');
 
     if ('IntersectionObserver' in window && !ScrollState.prefersReducedMotion) {
-      const termObserver = new IntersectionObserver(function(entries) {
+      const evidenceObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
-            terminal.classList.add('terminal-active');
-            termObserver.unobserve(entry.target);
+            timeline.classList.remove('timeline-pending');
+            timeline.classList.add('active');
+            evidenceObserver.unobserve(entry.target);
           }
         });
       }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
 
-      termObserver.observe(terminal);
-      ScrollState.observers.push(termObserver);
+      evidenceObserver.observe(timeline);
+      ScrollState.observers.push(evidenceObserver);
     } else {
-      terminal.classList.add('terminal-active');
+      timeline.classList.remove('timeline-pending');
+      timeline.classList.add('active');
     }
   }
 
@@ -187,32 +191,6 @@
       ScrollState.observers.push(graphObserver);
     } else {
       graph.classList.add('graph-active');
-    }
-  }
-
-  // Awards timeline animation
-  function initAwardsTimeline() {
-    const timeline = document.getElementById('awardsTimeline');
-    if (!timeline) return;
-
-    timeline.classList.add('timeline-pending');
-
-    if ('IntersectionObserver' in window && !ScrollState.prefersReducedMotion) {
-      const awardsObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            timeline.classList.remove('timeline-pending');
-            timeline.classList.add('active');
-            awardsObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
-
-      awardsObserver.observe(timeline);
-      ScrollState.observers.push(awardsObserver);
-    } else {
-      timeline.classList.remove('timeline-pending');
-      timeline.classList.add('active');
     }
   }
 
@@ -254,9 +232,8 @@
 
   initReveal();
   initSectionObserver();
-  initEducationTimeline();
-  initSkillsTerminal();
+  initJourneyTimeline();
+  initEvidenceTimeline();
   initKnowledgeGraph();
-  initAwardsTimeline();
   initFocusBento();
 })();

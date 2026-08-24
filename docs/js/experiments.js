@@ -7,16 +7,18 @@
   let width, height, dpr;
   let particles = [];
   let gridPoints = [];
+  let ripples = [];
   let mouse = { x: -1000, y: -1000, active: false };
   let rafId;
   let isVisible = false;
+  let scrollDensity = 1;
 
   const isMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
-  const particleCount = isMobile ? 35 : 80;
+  const baseParticleCount = isMobile ? 30 : 80;
   const gridSpacing = isMobile ? 50 : 36;
 
   const countEl = document.getElementById('field-particles');
-  if (countEl) countEl.textContent = String(particleCount);
+  if (countEl) countEl.textContent = String(baseParticleCount);
 
   function resize() {
     const rect = canvas.getBoundingClientRect();
@@ -51,8 +53,9 @@
   }
 
   function initParticles() {
+    const count = Math.floor(baseParticleCount * scrollDensity);
     particles = [];
-    for (let i = 0; i < particleCount; i++) {
+    for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
@@ -62,6 +65,7 @@
         alpha: Math.random() * 0.35 + 0.2
       });
     }
+    if (countEl) countEl.textContent = String(count);
   }
 
   function updateGrid(time) {
@@ -74,9 +78,9 @@
         const mx = mouse.x - p.ox;
         const my = mouse.y - p.oy;
         const dist = Math.sqrt(mx * mx + my * my);
-        const forceRadius = 140;
+        const forceRadius = 160;
         if (dist < forceRadius && dist > 0) {
-          const force = (1 - dist / forceRadius) * 12;
+          const force = (1 - dist / forceRadius) * 16;
           dx = -(mx / dist) * force;
           dy = -(my / dist) * force;
         }
@@ -134,8 +138,8 @@
         const mx = mouse.x - p.x;
         const my = mouse.y - p.y;
         const dist = Math.sqrt(mx * mx + my * my);
-        if (dist < 120 && dist > 0) {
-          const force = (1 - dist / 120) * 0.08;
+        if (dist < 130 && dist > 0) {
+          const force = (1 - dist / 130) * 0.1;
           p.vx += (mx / dist) * force;
           p.vy += (my / dist) * force;
         }
@@ -184,6 +188,51 @@
     ctx.globalAlpha = 1;
   }
 
+  function addRipple(x, y) {
+    ripples.push({ x, y, radius: 0, alpha: 0.6 });
+  }
+
+  function updateRipples() {
+    for (let i = ripples.length - 1; i >= 0; i--) {
+      const r = ripples[i];
+      r.radius += 3.5;
+      r.alpha -= 0.02;
+      if (r.alpha <= 0) {
+        ripples.splice(i, 1);
+      }
+    }
+  }
+
+  function drawRipples() {
+    ctx.lineWidth = 1.5;
+    for (let i = 0; i < ripples.length; i++) {
+      const r = ripples[i];
+      ctx.globalAlpha = r.alpha;
+      ctx.strokeStyle = '#00e5ff';
+      ctx.beginPath();
+      ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function updateScrollDensity() {
+    const rect = section.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const center = rect.top + rect.height / 2;
+    const distanceFromCenter = Math.abs(center - viewportHeight / 2);
+    const maxDistance = viewportHeight / 2 + rect.height / 2;
+    const proximity = 1 - Math.min(distanceFromCenter / maxDistance, 1);
+    // Density peaks when section is centered: 1.0 -> 1.5
+    const targetDensity = 1 + proximity * 0.5;
+    scrollDensity = scrollDensity + (targetDensity - scrollDensity) * 0.05;
+
+    const targetCount = Math.floor(baseParticleCount * scrollDensity);
+    if (Math.abs(particles.length - targetCount) >= 5) {
+      initParticles();
+    }
+  }
+
   function render(time) {
     if (!isVisible) return;
     ctx.clearRect(0, 0, width, height);
@@ -192,6 +241,9 @@
     drawConnections();
     drawParticles(time);
     drawMouseLight();
+    updateRipples();
+    drawRipples();
+    updateScrollDensity();
     rafId = requestAnimationFrame(render);
   }
 
@@ -220,6 +272,13 @@
     mouse.active = false;
   }
 
+  function onClick(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    addRipple(x, y);
+  }
+
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
@@ -232,6 +291,7 @@
   if (!isMobile) {
     canvas.addEventListener('mousemove', onMouseMove);
     canvas.addEventListener('mouseleave', onMouseLeave);
+    canvas.addEventListener('click', onClick);
   }
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');

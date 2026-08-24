@@ -43,6 +43,24 @@
     });
   });
 
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!navLinks.classList.contains('open')) return;
+    const target = e.target;
+    if (!menuToggle.contains(target) && !navLinks.contains(target)) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('open');
+    }
+  });
+
+  // Close mobile menu when resizing to desktop
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 767 && navLinks.classList.contains('open')) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('open');
+    }
+  }, { passive: true });
+
   // Back to top
   const backToTop = document.getElementById('backToTop');
   window.addEventListener('scroll', function() {
@@ -54,9 +72,9 @@
   });
 
   // Modal
-  const modal = document.getElementById('projectModal');
+  const modal = document.getElementById('caseStudyModal');
   const modalClose = document.getElementById('modalClose');
-  const projectDetailBtn = document.getElementById('projectDetailBtn');
+  const caseStudyBtn = document.getElementById('caseStudyBtn');
   let lastFocusedElement = null;
 
   function openModal() {
@@ -74,7 +92,7 @@
     if (lastFocusedElement) lastFocusedElement.focus();
   }
 
-  projectDetailBtn.addEventListener('click', openModal);
+  if (caseStudyBtn) caseStudyBtn.addEventListener('click', openModal);
   modalClose.addEventListener('click', closeModal);
 
   modal.addEventListener('click', function(e) {

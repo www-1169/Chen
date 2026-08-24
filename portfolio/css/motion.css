@@ -11,14 +11,15 @@
 .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Cards hover */
-.award-card:hover, .award-card:focus-within {
-  transform: translateX(6px);
-  border-color: var(--accent-gold);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18), 0 0 20px rgba(255, 196, 0, 0.08);
+.evidence-card:hover, .evidence-card:focus-within,
+.journey-card:hover, .journey-card:focus-within {
+  transform: translateX(5px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18), 0 0 20px rgba(0, 229, 255, 0.08);
 }
 
-.interest-card:hover, .interest-card:focus-within {
-  transform: translateY(-5px);
+.exploration-card:hover, .exploration-card:focus-within {
+  transform: translateY(-4px);
   border-color: var(--accent-cyan);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18), 0 0 24px rgba(0, 229, 255, 0.08);
 }
@@ -96,6 +97,89 @@
   50% { opacity: 0; }
 }
 
+/* Journey timeline animation */
+.journey-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
+  background: linear-gradient(180deg, var(--accent-cyan), var(--accent-green));
+  opacity: 0.45;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.journey-timeline.active .journey-line {
+  transform: translateX(-50%) scaleY(1);
+}
+
+.journey-beam {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 28px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, var(--accent-cyan), transparent);
+  opacity: 0;
+  box-shadow: 0 0 16px var(--glow-cyan);
+  pointer-events: none;
+}
+
+.journey-timeline.active .journey-beam {
+  animation: beamScan 1.6s ease-in-out forwards;
+}
+
+.journey-node {
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: var(--bg-primary);
+  border: 2px solid var(--accent-cyan);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color 0.4s ease,
+              box-shadow 0.4s ease,
+              border-color 0.4s ease;
+}
+
+.journey-node::after {
+  content: attr(data-label);
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.6s;
+}
+
+.journey-timeline.active .journey-node {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.journey-timeline.active .journey-node::after {
+  opacity: 1;
+}
+
+.journey-node.node-2026 { top: 0; }
+.journey-node.node-2027 { top: 33%; }
+.journey-node.node-2028 { top: 66%; }
+.journey-node.node-2030 { top: 100%; }
+
+.journey-timeline.active .journey-node.node-2026 { transition-delay: 0.3s; background: var(--accent-cyan); box-shadow: 0 0 14px var(--glow-cyan); animation: nodeGlow 2.5s ease-in-out infinite 1.2s; }
+.journey-timeline.active .journey-node.node-2027 { transition-delay: 0.55s; background: var(--bg-primary); border-color: rgba(122, 139, 153, 0.6); opacity: 0.75; }
+.journey-timeline.active .journey-node.node-2028 { transition-delay: 0.8s; background: var(--bg-primary); border-color: rgba(122, 139, 153, 0.6); opacity: 0.75; }
+.journey-timeline.active .journey-node.node-2030 { transition-delay: 1.05s; background: var(--accent-green); border-color: var(--accent-green); box-shadow: 0 0 22px var(--glow-green); animation: nodeGlow 2s ease-in-out infinite 1.5s; }
+
 /* Parallax transition */
 .hud-portrait img {
   transition: transform 0.2s ease-out;
@@ -115,6 +199,8 @@
   .timeline-active .timeline-beam,
   .timeline-active .node-2026,
   .timeline-active .node-now,
+  .journey-timeline.active .journey-beam,
+  .journey-timeline.active .journey-node,
   .terminal-cursor,
   .terminal-cursor.blink {
     animation: none;
@@ -122,11 +208,14 @@
   .kg-line {
     stroke-dashoffset: 0;
   }
-  .timeline-line {
+  .timeline-line,
+  .journey-line {
     transform: translateX(-50%) scaleY(1);
   }
-  .timeline-node {
+  .timeline-node,
+  .journey-node {
     transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
   .focus-card,
   .focus-card-active,
