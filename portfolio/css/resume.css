@@ -494,15 +494,103 @@ body::before {
 }
 
 .credential-card-ai {
+  grid-column: 1 / -1;
   background:
     radial-gradient(circle at 85% 82%, rgba(255, 176, 0, 0.18), transparent 35%),
     linear-gradient(145deg, rgba(255, 49, 94, 0.19), rgba(255, 255, 255, 0.025));
 }
 
 .credential-card-ielts {
+  grid-column: 1 / -1;
   background:
     radial-gradient(circle at 90% 15%, rgba(255, 49, 94, 0.17), transparent 34%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.012));
+}
+
+.credential-ai-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(30px, 5vw, 66px);
+  align-items: center;
+}
+
+.credential-ai-copy {
+  position: relative;
+  min-width: 0;
+  z-index: 1;
+}
+
+.credential-ai-copy > p:not(.credential-org) {
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 430px;
+}
+
+.credential-meta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 26px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.certificate-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.certificate-preview {
+  display: block;
+  min-width: 0;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-secondary);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-preview:hover,
+.certificate-preview:focus-visible {
+  transform: translateY(-5px);
+  border-color: rgba(255, 77, 46, 0.75);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+.certificate-preview-featured {
+  border-color: rgba(255, 176, 0, 0.5);
+}
+
+.certificate-preview figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.certificate-preview img {
+  width: 100%;
+  aspect-ratio: 1.414 / 1;
+  object-fit: cover;
+  object-position: center;
+  background: #fff;
+}
+
+.certificate-preview figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 15px;
+}
+
+.certificate-preview figcaption strong {
+  font-size: 14px;
+}
+
+.certificate-preview figcaption span {
+  color: var(--text-muted);
+  font-size: 11px;
 }
 
 .credential-topline {
@@ -686,6 +774,10 @@ body::before {
     grid-template-columns: 1fr;
   }
 
+  .credential-ai-layout {
+    grid-template-columns: 1fr;
+  }
+
   .achievement-strip {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -762,7 +854,36 @@ body::before {
   }
 
   .credential-card {
+    width: 100%;
+    max-width: 100%;
     min-height: auto;
+    min-width: 0;
+  }
+
+  .credential-grid,
+  .credential-ai-layout,
+  .credential-ai-copy,
+  .certificate-showcase,
+  .certificate-preview {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .evidence-section .section-heading,
+  .credential-card h3,
+  .credential-ai-copy > p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .credential-topline {
+    flex-wrap: wrap;
+  }
+
+  .certificate-showcase {
+    grid-template-columns: 1fr;
   }
 
   .ielts-summary {
