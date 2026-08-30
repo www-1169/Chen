@@ -9,7 +9,7 @@
   <meta property="og:title" content="陈志彬｜个人能力档案">
   <meta property="og:description" content="把想法整理清楚，把工具用到结果上。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/screenshots/star-assault-gameplay.png">
+  <meta property="og:image" content="assets/screenshots/aegis-tanks-hangar.png">
   <title>陈志彬｜个人能力档案</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -104,19 +104,37 @@
     <section class="section" id="case-study" aria-labelledby="case-study-title">
       <div class="container">
         <div class="reveal"><p class="section-title" id="case-study-title">03 / 代表项目</p><h2 class="section-heading">从想法到可运行作品</h2></div>
-        <article class="case-study-card reveal">
-          <div class="case-study-visual">
-            <div class="project-hud"><div class="hud-corner tl"></div><div class="hud-corner tr"></div><div class="hud-corner bl"></div><div class="hud-corner br"></div><span class="project-hud-label">可运行演示</span></div>
-            <div class="case-study-screenshot"><img src="assets/screenshots/star-assault-gameplay.png" alt="星际突击游戏实机画面"></div><div class="project-scan" aria-hidden="true"></div>
-            <div class="case-study-play"><a href="projects/star-assault/index.html" class="btn btn-primary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z"/></svg>立即体验</a></div>
-          </div>
-          <div class="case-study-info">
-            <p class="case-study-label">星际突击 / 浏览器互动项目</p><h3 class="case-study-name">完整的交互游戏系统</h3><p class="case-study-type">无需安装，可直接在浏览器运行</p>
-            <p class="case-study-summary">项目包含游戏循环、对象管理、碰撞检测、关卡波次、首领行为、音效合成与本地记录，体现了我将创意拆分成系统并持续实现的能力。</p>
-            <div class="project-result-row" aria-label="项目成果"><span><strong>6</strong> 个核心子系统</span><span><strong>3</strong> 类输入方式</span><span><strong>0</strong> 安装步骤</span></div>
-            <div class="case-study-actions"><button class="btn btn-primary" id="caseStudyBtn">查看项目解析</button><a href="projects/star-assault/index.html" class="btn btn-secondary">运行项目</a><a href="https://github.com/www-1169/Chen" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">查看代码</a></div>
-          </div>
-        </article>
+        <div class="case-study-stack">
+          <article class="case-study-card case-study-card-aegis reveal">
+            <div class="case-study-visual">
+              <div class="project-hud"><div class="hud-corner tl"></div><div class="hud-corner tr"></div><div class="hud-corner bl"></div><div class="hud-corner br"></div><span class="project-hud-label">最新代表作 · 在线试玩</span></div>
+              <div class="case-study-screenshot case-study-screenshot-cover"><img src="assets/screenshots/aegis-tanks-hangar.png" alt="AEGIS幻想坦克战原创科幻坦克与机库场景"></div><div class="project-scan" aria-hidden="true"></div>
+              <div class="case-study-play"><a href="projects/aegis-tanks/index.html" class="btn btn-primary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z"/></svg>立即试玩</a></div>
+            </div>
+            <div class="case-study-info">
+              <p class="case-study-label">俯视角坦克射击与随机成长游戏</p><h3 class="case-study-name">AEGIS：幻想坦克战</h3><p class="case-study-type">React · TypeScript · Phaser</p>
+              <p class="case-study-summary">围绕移动、瞄准、射击和随机强化构建完整战斗循环，并实现差异化坦克、八类武器、敌人行为、战斗商店、首领阶段、对象池优化与本地存档。</p>
+              <div class="project-tech-row" aria-label="项目技术亮点"><span>数据驱动配置</span><span>状态管理</span><span>对象池</span><span>本地存档</span></div>
+              <div class="project-result-row project-result-row-four" aria-label="AEGIS项目成果"><span><strong>5</strong> 款坦克</span><span><strong>8</strong> 种武器</span><span><strong>40</strong> 项升级</span><span><strong>10</strong> 波战斗 + Boss</span></div>
+              <div class="case-study-actions"><a href="projects/aegis-tanks/index.html" class="btn btn-primary">立即试玩</a><a href="https://github.com/www-1169/aegis-tank-shooter" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">查看源代码</a></div>
+              <p class="project-device-note">操作提示：建议使用电脑浏览器，WASD 移动、鼠标瞄准射击、Shift 冲刺。</p>
+            </div>
+          </article>
+
+          <article class="case-study-card case-study-card-secondary reveal">
+            <div class="case-study-visual">
+              <div class="project-hud"><div class="hud-corner tl"></div><div class="hud-corner tr"></div><div class="hud-corner bl"></div><div class="hud-corner br"></div><span class="project-hud-label">可运行演示</span></div>
+              <div class="case-study-screenshot"><img src="assets/screenshots/star-assault-gameplay.png" alt="星际突击游戏实机画面"></div><div class="project-scan" aria-hidden="true"></div>
+              <div class="case-study-play"><a href="projects/star-assault/index.html" class="btn btn-primary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z"/></svg>立即体验</a></div>
+            </div>
+            <div class="case-study-info">
+              <p class="case-study-label">星际突击 / 浏览器互动项目</p><h3 class="case-study-name">完整的交互游戏系统</h3><p class="case-study-type">无需安装，可直接在浏览器运行</p>
+              <p class="case-study-summary">项目包含游戏循环、对象管理、碰撞检测、关卡波次、首领行为、音效合成与本地记录，体现了我将创意拆分成系统并持续实现的能力。</p>
+              <div class="project-result-row" aria-label="项目成果"><span><strong>6</strong> 个核心子系统</span><span><strong>3</strong> 类输入方式</span><span><strong>0</strong> 安装步骤</span></div>
+              <div class="case-study-actions"><button class="btn btn-primary" id="caseStudyBtn">查看项目解析</button><a href="projects/star-assault/index.html" class="btn btn-secondary">运行项目</a><a href="https://github.com/www-1169/Chen" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">查看代码</a></div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
