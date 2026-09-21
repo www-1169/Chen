@@ -873,7 +873,20 @@ body::before {
   }
 
   .resume-headline {
-    font-size: clamp(54px, 18vw, 82px);
+    font-size: clamp(48px, 15vw, 72px);
+    font-weight: 800;
+    line-height: 1.16;
+    letter-spacing: 0;
+    gap: 12px;
+  }
+
+  .resume-headline .headline-accent {
+    color: var(--accent-cyan);
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+    font-size: clamp(34px, 10.5vw, 48px);
+    font-weight: 700;
+    letter-spacing: 0.025em;
   }
 
   .resume-hero .hero-content {
@@ -982,10 +995,6 @@ body::before {
 @media (max-width: 480px) {
   .resume-hero .hero-content {
     padding-top: 52px;
-  }
-
-  .resume-headline .headline-accent {
-    -webkit-text-stroke-width: 1.4px;
   }
 
   .resume-profile-card {
