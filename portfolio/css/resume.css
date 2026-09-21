@@ -282,7 +282,8 @@ body::before {
   width: 100%;
   max-width: 260px;
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
+  flex-direction: column;
   justify-content: space-between;
   gap: 14px;
   margin-bottom: 17px;
@@ -295,8 +296,9 @@ body::before {
 
 .profile-nameplate span {
   color: var(--text-muted);
-  font-size: 11px;
-  text-align: right;
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.6;
 }
 
 .resume-profile-card .hud-data-list {
